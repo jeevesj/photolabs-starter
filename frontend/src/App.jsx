@@ -1,21 +1,15 @@
 import React from "react";
 import PhotoListItem from "./components/PhotoListItem";
+import PhotoList from './components/PhotoList';
 import "./styles/PhotoList.scss"
 import "./App.scss";
 
-const App = () => {
-  // Create an array with three elements
-  const photos = new Array(3).fill(null);
-  // FILL NULL TO ENABLE MAP
-  return (
-    <div className="App">
-      <div className="photo-list">
-        {photos.map((index) => (
-          <PhotoListItem key={index} />
-        ))}
-      </div>
-    </div>
-  );
-};
+const App = () => (
+  <div className="App">
+    {/* { Array.from(Array(3)).map((_, index) => <PhotoListItem key={index}/>) } */}
+    <PhotoList/>
+  </div>
+)
+
 
 export default App;

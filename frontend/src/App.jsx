@@ -1,14 +1,14 @@
 import React from 'react';
-import TopicList from './components/TopicList';
-import PhotoList from './components/PhotoList';
-import TopNavigationBar from './components/TopNavigationBar';
+import HomeRoute from './routes/HomeRoute';
+import photos from './mocks/photos.json';
+import topics from './mocks/topics.json';
 import './App.scss';
 
 const App = () => (
   <div className="App">
-    <TopNavigationBar />
-    <PhotoList />
+    <HomeRoute photos={photos} topics={topics} />
   </div>
 );
+
 
 export default App;

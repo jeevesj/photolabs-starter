@@ -1,12 +1,13 @@
 import React from 'react';
 import TopicListItem from './TopicListItem';
+import mockTopics from '../mocks/topics.json';
 import '../styles/TopicList.scss';
 
 
 const TopicList = ({topics}) => {
   return (
     <div className="top-nav-bar--topic-list">
-      {topics.map(topic => 
+      {mockTopics.map(topic => 
         <TopicListItem 
           key={topic.id}
           label={topic.label}
@@ -17,23 +18,5 @@ const TopicList = ({topics}) => {
   );
 }
 
-TopicList.defaultProps = {
-  topics: [
-    {
-      id: 1,
-      label: 'Nature',
-      link: 'link placeholder' 
-    },
-    { 
-      id: 2, 
-      label: 'Food',
-      link: 'link placeholder' 
-    },
-    {
-      id: 3,
-      label: 'People',
-      link: 'link placeholder' 
-    },
-  ]
-}
+
 export default TopicList

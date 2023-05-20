@@ -2,10 +2,13 @@ import React from 'react';
 
 import '../styles/TopicListItem.scss';
 
-const TopicListItem = ({ id, label, link }) => {
+const TopicListItem = ( props ) => {
   return (
     <div className="topic-list--item">
-      {label}
+      {props.key}
+      {props.label}
+      {props.link}
+      
     </div>
   );
 }

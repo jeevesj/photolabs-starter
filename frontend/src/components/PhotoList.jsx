@@ -1,6 +1,5 @@
 import React from 'react';
 import PhotoListItem from './PhotoListItem';
-import mockPhotos from '../mocks/photos.json';
 import '../styles/PhotoList.scss';
 
 const PhotoList = ({ photos, onFavClick, favPhotos, onPhotoClick }) => {
@@ -9,9 +8,7 @@ const PhotoList = ({ photos, onFavClick, favPhotos, onPhotoClick }) => {
       {photos.map(photo => 
         <PhotoListItem 
           key={photo.id}
-          username={photo.user.username}
-          imageSource={photo.urls.small}
-          id={photo.id}
+          photo={photo}
           onFavClick={onFavClick}
           favPhotos={favPhotos}
           onPhotoClick={onPhotoClick}

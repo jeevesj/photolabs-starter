@@ -1,8 +1,7 @@
 import React from 'react';
+import '../styles/PhotoDetailsModal.scss';
 
-import '../styles/PhotoDetailsModal.scss'
-
-export const PhotoDetailsModal  = ({ onClose }) => (
+export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos }) => (
   <div className='photo-details-modal'>
     <button className='photo-details-modal--close-button' onClick={onClose}>
       
@@ -18,8 +17,24 @@ export const PhotoDetailsModal  = ({ onClose }) => (
           </clipPath>
         </defs>
       </svg>
-    </button>
+      </button>
+
+
+    <div className='photo-details-modal--image'>
+      {selectedPhoto && <img src={selectedPhoto.urls.regular} alt={selectedPhoto.user.username} />}
+    </div>
+
+    <div className='photo-details-modal--header'>
+      <h1>Similar Photos</h1>
+    </div>
+
+    <div className='photo-details-modal--images'>
+      {similarPhotos.map(photo => (
+        <img key={photo.id} src={photo.urls.small} alt={photo.username} />
+      ))}
+    </div>
   </div>
 )
+
 
 export default PhotoDetailsModal;

@@ -3,12 +3,12 @@ import React from 'react';
 import PhotoFavButton from './PhotoFavButton';
 import '../styles/PhotoListItem.scss';
 
-const PhotoListItem = ({ username, imageSource, id, onFavClick, favPhotos, onPhotoClick }) => (
-  <div key={id} className="photo-list--item">
-      <div className="username">{username}</div>
-      <div className='photo-list--image-container'onClick={() => onPhotoClick(id)}>
-        <img className="photo-list--image" src={imageSource} alt={username} />
-        <PhotoFavButton onFavClick={onFavClick} favPhotos={favPhotos} photoId={id} />
+const PhotoListItem = ({ photo, onFavClick, favPhotos, onPhotoClick }) => (
+  <div className="photo-list--item">
+      <div className="username">{photo.user.username}</div>
+      <div className='photo-list--image-container' onClick={() => onPhotoClick(photo)}>
+        <img className="photo-list--image" src={photo.urls.small} alt={photo.user.username} />
+        <PhotoFavButton onFavClick={onFavClick} favPhotos={favPhotos} photoId={photo.id} />
       </div>
   </div>
 );

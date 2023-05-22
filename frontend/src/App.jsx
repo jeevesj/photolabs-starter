@@ -7,18 +7,26 @@ import './App.scss';
 
 const App = () => {
   const [showModal, setShowModal] = useState(false);
+  const [selectedPhoto, setSelectedPhoto] = useState(null);
 
-  const handlePhotoClick = () => {
-    setShowModal(!showModal);
+  const handlePhotoClick = (photo) => {
+    setSelectedPhoto(photo);
+    setShowModal(true);
   };
+
+  const handleModalClose = () => {
+    setSelectedPhoto(null);
+    setShowModal(false);
+  };
+
+  const similarPhotos = photos.filter(photo => photo.slug === selectedPhoto?.slug && photo.id !== selectedPhoto?.id);
 
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} onPhotoClick={handlePhotoClick} />
-      {showModal && <PhotoDetailsModal onClose={handlePhotoClick} />}
+      {showModal && <PhotoDetailsModal selectedPhoto={selectedPhoto} similarPhotos={similarPhotos} onClose={handleModalClose} />}
     </div>
   );
 }
-
 
 export default App;

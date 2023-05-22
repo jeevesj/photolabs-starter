@@ -15,9 +15,10 @@ const App = () => {
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} onPhotoClick={handlePhotoClick} />
-      {showModal && <PhotoDetailsModal />}
+      {showModal && <PhotoDetailsModal onClose={handlePhotoClick} />}
     </div>
   );
 }
+
 
 export default App;

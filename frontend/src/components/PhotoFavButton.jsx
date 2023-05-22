@@ -1,14 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import FavIcon from './FavIcon';
 import '../styles/PhotoFavButton.scss';
 
-function PhotoFavButton() {
-  const [isFav, setIsFav] = useState(false);
-
+const PhotoFavButton = ({ onFavClick, favPhotos, photoId }) => {
+  const isFav = favPhotos.includes(photoId);
   const handleFavClick = () => {
-    const newIsFav = !isFav;
-    setIsFav(newIsFav);
-    console.log(newIsFav);
+    onFavClick(photoId);
   }
 
   return (

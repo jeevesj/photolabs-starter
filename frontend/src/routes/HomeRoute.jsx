@@ -4,7 +4,7 @@ import TopNavigationBar from '../components/TopNavigationBar';
 import PhotoList from '../components/PhotoList';
 import '../styles/HomeRoute.scss';
 
-const HomeRoute = ({ photos, topics }) => {
+const HomeRoute = ({ photos, topics, onPhotoClick }) => {
   const [favPhotos, setFavPhotos] = useState([]);
 
   const handleFavClick = (photoId) => {
@@ -21,7 +21,7 @@ const HomeRoute = ({ photos, topics }) => {
   return (
     <div className="home-route">
       <TopNavigationBar topics={topics} favPhotos={favPhotos} />
-      <PhotoList photos={photos} onFavClick={handleFavClick} favPhotos={favPhotos} />
+      <PhotoList photos={photos} onFavClick={handleFavClick} favPhotos={favPhotos} onPhotoClick={onPhotoClick}/>
     </div>
   );
 }

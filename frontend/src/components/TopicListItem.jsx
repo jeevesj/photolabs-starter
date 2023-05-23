@@ -6,7 +6,7 @@ const TopicListItem = ( props ) => {
   return (
     <div className="topic-list--item">
       {props.key}
-      {props.label}
+      
       {props.link}
       
     </div>

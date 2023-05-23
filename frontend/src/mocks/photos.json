@@ -199,7 +199,7 @@
     "likes": 24,
     "description": "A man drinking a coffee.",
     "location": {
-      "city": "Montreal",
+      "city": "vancity",
       "country": "Canada",
       "position": {
         "latitude": 45.473298,
@@ -216,7 +216,7 @@
     "user": {
       "id": "QPxL2MGqfrw",
       "updated_at": "2016-07-10T11:00:01-05:00",
-      "username": "exampleuser",
+      "username": "stiffler",
       "name": "Joe Example",
       "portfolio_url": "https://example.com/",
       "bio": "Just an everyday Joe"

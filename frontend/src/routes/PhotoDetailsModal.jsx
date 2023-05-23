@@ -1,7 +1,8 @@
 import React from 'react';
+import PhotoFavButton from '../components/PhotoFavButton';
 import '../styles/PhotoDetailsModal.scss';
 
-export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos }) => (
+export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos, onFavClick, favPhotos }) => (
   <div className='photo-details-modal'>
     <button className='photo-details-modal--close-button' onClick={onClose}>
       
@@ -22,6 +23,9 @@ export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos }) => 
 
     <div className='photo-details-modal--image'>
       {selectedPhoto && <img src={selectedPhoto.urls.regular} alt={selectedPhoto.user.username} />}
+      <div className='photo-details-modal--fav'>
+        <PhotoFavButton onFavClick={onFavClick} favPhotos={favPhotos} photoId={selectedPhoto.id} />
+      </div>
     </div>
 
     <div className='photo-details-modal--header'>
@@ -30,11 +34,13 @@ export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos }) => 
 
     <div className='photo-details-modal--images'>
       {similarPhotos.map(photo => (
-        <img key={photo.id} src={photo.urls.small} alt={photo.username} />
+        <div key={photo.id}>
+          <img src={photo.urls.small} alt={photo.username} />
+          <PhotoFavButton onFavClick={onFavClick} favPhotos={favPhotos} photoId={photo.id} />
+        </div>
       ))}
     </div>
   </div>
 )
-
 
 export default PhotoDetailsModal;

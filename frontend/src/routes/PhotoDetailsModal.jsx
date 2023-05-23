@@ -27,6 +27,10 @@ export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos, onFav
         <PhotoFavButton onFavClick={onFavClick} favPhotos={favPhotos} photoId={selectedPhoto.id} />
       </div>
     </div>
+    <div>
+      <div className="photo-modal--username">{selectedPhoto.user.username}</div>
+      <div className='photo-modal--user-info'>{selectedPhoto.location.city}, {selectedPhoto.location.country}</div>
+    </div>
 
     <div className='photo-details-modal--header'>
       <h1>Similar Photos</h1>

@@ -15,6 +15,7 @@ const App = () => {
     handlePhotoClick,
     handleModalClose,
     handleFavClick,
+    handleTopicClick,
   } = useApplicationData();
 
   useEffect(() => {
@@ -33,8 +34,9 @@ const App = () => {
 
   return (
     <div className="App">
-      <HomeRoute photos={photos} topics={topics} onPhotoClick={handlePhotoClick} favPhotos={favPhotos} onFavClick={handleFavClick}/>
+      <HomeRoute photos={photos} topics={topics} onPhotoClick={handlePhotoClick} favPhotos={favPhotos} onFavClick={handleFavClick} onTopicClick={handleTopicClick}/>
       {showModal && <PhotoDetailsModal selectedPhoto={selectedPhoto} similarPhotos={similarPhotos} onClose={handleModalClose} onFavClick={handleFavClick} favPhotos={favPhotos} />}
+      
     </div>
   );
 }

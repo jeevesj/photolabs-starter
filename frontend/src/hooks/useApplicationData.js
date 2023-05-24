@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+
 
 export default function useApplicationData() {
   const [showModal, setShowModal] = useState(false);
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [favPhotos, setFavPhotos] = useState([]);
   const [photos, setPhotos] = useState([]);
+  const [topics, setTopics] = useState([]);
 
   const handlePhotoClick = (photo) => {
     setSelectedPhoto(photo);
@@ -35,6 +37,18 @@ export default function useApplicationData() {
       .catch(error => console.error(error));
   };
 
+  useEffect(() => {
+    fetch('http://localhost:8001/api/photos')
+      .then(res => res.json())
+      .then(data => setPhotos(data))
+      .catch(error => console.error(error));
+
+    fetch('http://localhost:8001/api/topics')
+      .then(res => res.json())
+      .then(data => setTopics(data))
+      .catch(error => console.error(error));
+  }, []);
+
   return {
     showModal,
     selectedPhoto,
@@ -44,6 +58,7 @@ export default function useApplicationData() {
     handleFavClick,
     photos,
     handleTopicClick,
+    topics,
 
   };
 }

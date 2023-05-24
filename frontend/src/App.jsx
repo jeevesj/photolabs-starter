@@ -5,8 +5,8 @@ import './App.scss';
 import useApplicationData from './hooks/useApplicationData';
 
 const App = () => {
-  const [photos, setPhotos] = useState([]);
-  const [topics, setTopics] = useState([]);
+  //const [photos, setPhotos] = useState([]);
+  //const [topics, setTopics] = useState([]);
 
   const {
     showModal,
@@ -16,19 +16,21 @@ const App = () => {
     handleModalClose,
     handleFavClick,
     handleTopicClick,
+    photos,
+    topics,
   } = useApplicationData();
 
-  useEffect(() => {
-    fetch('http://localhost:8001/api/photos')
-      .then(res => res.json())
-      .then(data => setPhotos(data))
-      .catch(error => console.error(error));
+  // useEffect(() => {
+  //   fetch('http://localhost:8001/api/photos')
+  //     .then(res => res.json())
+  //     .then(data => setPhotos(data))
+  //     .catch(error => console.error(error));
 
-    fetch('http://localhost:8001/api/topics')
-      .then(res => res.json())
-      .then(data => setTopics(data))
-      .catch(error => console.error(error));
-  }, []);
+  //   fetch('http://localhost:8001/api/topics')
+  //     .then(res => res.json())
+  //     .then(data => setTopics(data))
+  //     .catch(error => console.error(error));
+  // }, []);
 
   
 

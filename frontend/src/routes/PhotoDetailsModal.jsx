@@ -40,7 +40,6 @@ export const PhotoDetailsModal = ({ onClose, selectedPhoto, similarPhotos, onFav
       {similarPhotos.map(photo => (
         <div key={photo.id}>
           <img src={photo.urls.small} alt={photo.username} />
-          <PhotoFavButton onFavClick={onFavClick} favPhotos={favPhotos} photoId={photo.id} />
         </div>
       ))}
     </div>

@@ -6,7 +6,7 @@
   left: 50%;
   transform: translate(-50%, -40%);
   height: 80%;
-  width: 50%;
+  width: 45%;
   overflow-y: scroll;
   border-radius: 12px;
 }
@@ -27,7 +27,7 @@
 .photo-details-modal--fav {
   position: absolute;
   top: 55px;
-  left: 45px;
+  left: 60px;
 }
 
 .photo-details-modal--images {
@@ -44,10 +44,33 @@
   object-fit: scale-down;
 }
 .photo-details-modal--image img {
-  max-width: 90%;
+  max-width: 100%;
   border-radius: 8px 8px 0px 0px;
   height: auto;
   object-fit: scale-down;
+}
+
+.modal-container {
+
+  margin: 24px;
+  padding: 8px;
+  border-width: 0.5px;
+  border-color: lightgray;
+  border-style: solid;
+  border-radius: 8px;
+  max-width: fit-content;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.photo-similar-modal--image {
+  user-select: none;
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .photo-details-modal--images div img {
@@ -82,16 +105,36 @@
 }
 
 
-.photo-modal--username {
-  margin-top: 5px;
-  font-weight: 700;
-  font-size: 20px;
-  margin-left: 40px;
+.photo-list--user-profile {
+  object-fit: cover;
+  border-radius: 100%;
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
 }
 
-.photo-modal--user-info {
-  margin-top: 5px;
+.photo-modal--user-details {
+  margin-left: 55px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.photo-modal--users-details {
+  margin-left: 10px;
+  margin-top: 15px;
+  display: flex;
+  align-items: center;
+}
+
+
+.photo-list--username-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.photo-list--user-info {
   font-weight: 500;
-  font-size: 16px;
-  margin-left: 40px;
+  font-size: 12px;
 }

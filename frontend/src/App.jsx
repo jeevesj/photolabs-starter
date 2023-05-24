@@ -30,12 +30,12 @@ const App = () => {
       .catch(error => console.error(error));
   }, []);
 
-  const similarPhotos = photos.filter(photo => photo.slug === selectedPhoto?.slug && photo.id !== selectedPhoto?.id);
+  
 
   return (
     <div className="App">
       <HomeRoute photos={photos} topics={topics} onPhotoClick={handlePhotoClick} favPhotos={favPhotos} onFavClick={handleFavClick} onTopicClick={handleTopicClick}/>
-      {showModal && <PhotoDetailsModal selectedPhoto={selectedPhoto} similarPhotos={similarPhotos} onClose={handleModalClose} onFavClick={handleFavClick} favPhotos={favPhotos} />}
+      {showModal && <PhotoDetailsModal selectedPhoto={selectedPhoto} onClose={handleModalClose} onFavClick={handleFavClick} favPhotos={favPhotos} />}
       
     </div>
   );

@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import HomeRoute from './routes/HomeRoute';
 import PhotoDetailsModal from './routes/PhotoDetailsModal';
-import photos from './mocks/photos.json';
-import topics from './mocks/topics.json';
 import './App.scss';
 import useApplicationData from './hooks/useApplicationData';
 
 const App = () => {
+  const [photos, setPhotos] = useState([]);
+  const [topics, setTopics] = useState([]);
+
   const {
     showModal,
     selectedPhoto,
@@ -15,6 +16,18 @@ const App = () => {
     handleModalClose,
     handleFavClick,
   } = useApplicationData();
+
+  useEffect(() => {
+    fetch('http://localhost:8001/api/photos')
+      .then(res => res.json())
+      .then(data => setPhotos(data))
+      .catch(error => console.error(error));
+
+    fetch('http://localhost:8001/api/topics')
+      .then(res => res.json())
+      .then(data => setTopics(data))
+      .catch(error => console.error(error));
+  }, []);
 
   const similarPhotos = photos.filter(photo => photo.slug === selectedPhoto?.slug && photo.id !== selectedPhoto?.id);
 

@@ -77,7 +77,11 @@ export const PhotoDetailsModal = ({
     <div className="photo-details-modal--images">
       {selectedPhoto.similar_photos.map((photo) => (
         <div key={photo.id} className="modal-container">
-          <img src={photo.urls.regular} alt={photo.user.username}  className="photo-similar-modal--image"/>
+          <img
+            src={photo.urls.regular}
+            alt={photo.user.username}
+            className="photo-similar-modal--image"
+          />
           <div className="photo-modal--users-details">
             <img
               className="photo-list--user-profile"

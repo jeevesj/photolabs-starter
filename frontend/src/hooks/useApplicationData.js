@@ -1,5 +1,4 @@
-import { useState, useEffect } from 'react';
-
+import { useState, useEffect } from "react";
 
 export default function useApplicationData() {
   const [showModal, setShowModal] = useState(false);
@@ -21,7 +20,7 @@ export default function useApplicationData() {
   const handleFavClick = (photoId) => {
     let newFavPhotos = [...favPhotos];
     if (favPhotos.includes(photoId)) {
-      newFavPhotos = newFavPhotos.filter(id => id !== photoId);
+      newFavPhotos = newFavPhotos.filter((id) => id !== photoId);
     } else {
       newFavPhotos.push(photoId);
     }
@@ -32,21 +31,21 @@ export default function useApplicationData() {
   const handleTopicClick = (topicId) => {
     console.log(`Fetching photos for topic id: ${topicId}`);
     fetch(`http://localhost:8001/api/topics/photos/${topicId}`)
-      .then(res => res.json())
-      .then(data => setPhotos(data))
-      .catch(error => console.error(error));
+      .then((res) => res.json())
+      .then((data) => setPhotos(data))
+      .catch((error) => console.error(error));
   };
 
   useEffect(() => {
-    fetch('http://localhost:8001/api/photos')
-      .then(res => res.json())
-      .then(data => setPhotos(data))
-      .catch(error => console.error(error));
+    fetch("http://localhost:8001/api/photos")
+      .then((res) => res.json())
+      .then((data) => setPhotos(data))
+      .catch((error) => console.error(error));
 
-    fetch('http://localhost:8001/api/topics')
-      .then(res => res.json())
-      .then(data => setTopics(data))
-      .catch(error => console.error(error));
+    fetch("http://localhost:8001/api/topics")
+      .then((res) => res.json())
+      .then((data) => setTopics(data))
+      .catch((error) => console.error(error));
   }, []);
 
   return {
@@ -59,6 +58,5 @@ export default function useApplicationData() {
     photos,
     handleTopicClick,
     topics,
-
   };
 }

@@ -1,7 +1,16 @@
 # react-photolabs
-The PhotoLabs project for the Web Development React course programming.
+
+Photolabs is poised to be the next Instagram due to its unique blend of sophisticated technology, user-focused features, and commitment to fostering a dynamic community. 
 
 # Photolabs
+
+As it continues to evolve, Photolabs is set to redefine how people interact with photos online, emulating Instagram's success and pushing beyond.
+
+# Take a Look
+
+!["mainpage"](https://github.com/jeevesj/photolabs-starter/blob/main/docs/photolabs_screenshot_main.JPG?raw=true)
+
+!["zoomed in"](https://github.com/jeevesj/photolabs-starter/blob/main/docs/photolabs_screenshot_enlarged.JPG?raw=true)
 
 ## Setup
 

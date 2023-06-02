@@ -4,9 +4,11 @@ import '../styles/PhotoFavButton.scss';
 
 const PhotoFavButton = ({ onFavClick, favPhotos, photoId }) => {
   const isFav = favPhotos.includes(photoId);
-  const handleFavClick = () => {
+  const handleFavClick = (event) => {
+    event.stopPropagation(); // stop event propagation
     onFavClick(photoId);
   }
+  
 
   return (
     <div className=''>

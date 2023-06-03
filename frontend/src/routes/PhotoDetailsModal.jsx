@@ -82,6 +82,13 @@ export const PhotoDetailsModal = ({
             alt={photo.user.username}
             className="photo-similar-modal--image"
           />
+          <div className="similar-fav">
+          <PhotoFavButton
+          onFavClick={onFavClick}
+          favPhotos={favPhotos}
+          photoId={photo.id}
+          />
+          </div>
           <div className="photo-modal--users-details">
             <img
               className="photo-list--user-profile"

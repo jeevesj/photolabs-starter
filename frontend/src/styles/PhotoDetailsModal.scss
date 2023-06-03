@@ -30,6 +30,8 @@
   left: 60px;
 }
 
+
+
 .photo-details-modal--images {
   
   margin-left: 36px;
@@ -51,7 +53,7 @@
 }
 
 .modal-container {
-
+  
   margin: 24px;
   padding: 8px;
   border-width: 0.5px;
@@ -132,6 +134,12 @@
 .photo-list--username-info {
   display: flex;
   flex-direction: column;
+}
+
+.similar-fav {
+  position: relative;
+  top: -60px; 
+  left: 10px;
 }
 
 .photo-list--user-info {
